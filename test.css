@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.parent{
+    display:flex;
+}
+
+.enfant{
+    width:50%;
+    height:200px;
+    background: #000;
+}
+
+.enfant:nth-child(2){
+    background: red;
+}
+
+@media(max-width:400px){
+    .parent{
+        flex-direction: column;
+    }
+    .enfant{
+        width: 100%;
+    }
+}

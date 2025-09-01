@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Laboratoire Apex</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+</head>
+
+<script>
+  function toggleDetails() {
+    const section = document.getElementById("details-section");
+    const toggleBtn = document.querySelector(".show-more-toggle");
+
+    if (section.classList.contains("hidden-mobile")) {
+      section.classList.remove("hidden-mobile");
+      toggleBtn.innerHTML = "▲ Réduire";
+    } else {
+      section.classList.add("hidden-mobile");
+      toggleBtn.innerHTML = "▼ Voir plus";
+    }
+  }
+</script>
+<script>
+  function toggleDolopex() {
+    const content = document.getElementById("dolopex-more");
+    const toggleBtn = document.querySelector(".dolopex-left .show-more-toggle");
+
+    if (content.classList.contains("hidden-mobile")) {
+      content.classList.remove("hidden-mobile");
+      toggleBtn.innerHTML = "▲ Réduire";
+    } else {
+      content.classList.add("hidden-mobile");
+      toggleBtn.innerHTML = "▼ Voir plus";
+    }
+  }
+</script>
+
+<script>
+  function toggleChondroDetails() {
+    const details = document.getElementById("chondroDetails");
+    const toggle = document.querySelector(".show-more-toggle");
+
+    if (details.classList.contains("hidden-mobile")) {
+      details.classList.remove("hidden-mobile");
+      toggle.textContent = "▲ Voir moins";
+    } else {
+      details.classList.add("hidden-mobile");
+      toggle.textContent = "▼ Voir plus";
+    }
+  }
+</script>
+
+<script>
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    links.classList.toggle('show');
+  }
+</script>
+
+
+<body>
+
+ <header>
+  <div class="navbar">
+    <img src="images/apexlogo.jpg" alt="Logo Apex" class="logo" />
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">À Propos</a></li>
+        <li><a href="#expertise">Notre Expertise</a></li>
+        <li><a href="#products">Nos Produits</a></li>
+        <li><a href="#rd">R&D</a></li>
+        <li><a href="#contact" class="ctn">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Section Accueil -->
+  <!-- HERO / ACCUEIL -->
+
+<section id="home" class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <img src="images/apexlogo.jpg" alt="Logo Apex" class="hero-logo" />
+      <h1>APEX Laboratoire</h1>
+      <p>Solutions innovantes pour votre santé articulaire et osseuse</p>
+      <a href="#products" class="cta-btn">Découvrir nos produits</a>
+    </div>
+    <div class="hero-right">
+      <div class="mission-box">
+        <h2>Notre Mission</h2>
+        <p>APEX Laboratoire est un laboratoire pharmaceutique innovant, spécialisé dans la formulation de compléments alimentaires de haute qualité, conçus pour améliorer votre santé et votre bien-être.</p>
+        <p>Notre mission est de vous offrir des solutions naturelles et scientifiquement prouvées qui répondent aux besoins spécifiques de votre corps, tout en respectant les normes internationales les plus strictes en matière de qualité et de sécurité.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SÉPARATEUR -->
+<div class="separator"></div>
+
+<!-- À PROPOS -->
+<section id="about" class="about">
+  <div class="about-inner">
+    <h2>À Propos d’APEX Laboratoire</h2>
+    <div class="underline"></div>
+    <p class="about-slogan">Une entreprise dédiée à l'innovation pharmaceutique et à la santé globale</p>
+
+    <div class="about-content">
+      <div class="about-left">
+        <img src="images/apexlogo.jpg" alt="Logo Apex" class="about-logo" />
+        <p>Fondé par une équipe de pharmaciens et de chercheurs passionnés, APEX Laboratoire se positionne comme un acteur innovant dans le domaine des compléments alimentaires. Notre expertise s'est construite autour d'une vision claire : développer des solutions naturelles efficaces, scientifiquement validées et accessibles à tous.</p>
+        <p>Basé en Tunisie et rayonnant à l'international, APEX Laboratoire combine les bienfaits des ingrédients naturels avec une approche scientifique rigoureuse pour concevoir des formulations uniques qui répondent aux besoins de santé modernes.</p>
+      </div>
+      <div class="about-right">
+        <div class="about-box">
+          <h3>Notre Philosophie</h3>
+          <p>Chez APEX Laboratoire, nous croyons que la nature et la science peuvent travailler en harmonie pour offrir des solutions de santé optimales. Nos formulations uniques sont le fruit de cette synergie, combinant des ingrédients naturels soigneusement sélectionnés et des principes scientifiques éprouvés.</p>
+        </div>
+        <div class="about-box">
+          <h3>Nos Valeurs</h3>
+          <ul class="valeurs">
+            <li><strong>Excellence</strong> – Dans chaque aspect de notre travail, de la recherche à la production</li>
+            <li><strong>Innovation</strong> – Recherche continue de nouvelles formulations efficaces</li>
+            <li><strong>Intégrité</strong> – Transparence totale sur nos ingrédients et processus</li>
+            <li><strong>Accessibilité</strong> – Des solutions de qualité accessibles au plus grand nombre</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="rd" class="rd-section">
+  <div class="rd-inner">
+    <h2>Recherche & Développement</h2>
+    <div class="underline"></div>
+    <p class="rd-subtitle">
+      L'innovation scientifique au cœur de notre processus de création
+    </p>
+
+    <div class="rd-cards">
+      <div class="rd-card">
+        <div class="rd-icon"><i class="fas fa-flask"></i></div>
+        <h3>Laboratoire de Pointe</h3>
+        <p>Notre laboratoire équipé des technologies les plus récentes nous permet de développer et tester des formulations innovantes, en garantissant leur efficacité et leur sécurité.</p>
+      </div>
+      <div class="rd-card">
+        <div class="rd-icon"><i class="fas fa-dna"></i></div>
+        <h3>Formulations Uniques</h3>
+        <p>Nos équipes de chercheurs et pharmaciens développent des formulations exclusives, optimisant les synergies entre ingrédients pour une efficacité maximale.</p>
+      </div>
+      <div class="rd-card">
+        <div class="rd-icon"><i class="fas fa-clipboard-check"></i></div>
+        <h3>Contrôle Qualité Rigoureux</h3>
+        <p>Chaque lot de production est soumis à des tests rigoureux pour garantir la pureté, la concentration et l'efficacité des ingrédients actifs.</p>
+      </div>
+    </div>
+
+    <!-- wrapper pour aligner parfaitement -->
+    <div class="rd-process-wrapper">
+      <div class="rd-process-box">
+        <h3>Notre Processus d'Innovation</h3>
+        <div class="rd-steps">
+          <div class="step">
+            <div class="step-icon">1</div>
+            <h4>Recherche</h4>
+            <p>Identification des besoins et étude des ingrédients actifs potentiels</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">2</div>
+            <h4>Formulation</h4>
+            <p>Développement de formules exclusives optimisant l'efficacité des ingrédients</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">3</div>
+            <h4>Tests</h4>
+            <p>Évaluation rigoureuse de l'efficacité et de la sécurité des formulations</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">4</div>
+            <h4>Production</h4>
+            <p>Fabrication selon les normes GMP et contrôle qualité à chaque étape</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="expertise" class="expertise-section">
+  <div class="expertise-inner">
+
+    <div class="expertise-intro-block">
+
+      <div class="expertise-text" >
+        <h2>Notre Expertise</h2>
+        <div class="underline"></div>
+        <p class="expertise-subtitle">
+          Une spécialisation dans les compléments alimentaires pour la santé articulaire et osseuse
+        </p>
+        <p>
+          APEX Laboratoire a développé une expertise spécifique dans la conception de solutions efficaces pour les problèmes ostéoarticulaires, permettant à nos clients de retrouver mobilité et confort au quotidien.
+        </p>
+        <div class="certification">
+          <img src="img/gmp.png" alt="Certifié GMP" />
+          <div>
+            <strong>Qualité Certifiée</strong><br>
+            Normes GMP (Good Manufacturing Practices)
+          </div>
+        </div>
+      </div>
+
+       <div class="expertise-images-column">
+    <img src="images/gmp-logo.jpg" alt="Image 1" class="expertise-image-column-img" />
+    <img src="images/Chonro.jpg" alt="Image 2" class="expertise-image-column-img" />
+  </div>
+
+    </div> <!-- fin expertise-intro-block -->
+
+    <!-- La partie PATIENT sort du .expertise-grid -->
+    <!-- Remplacez vos cartes expertise dans la section patient par ceci : -->
+
+<div class="patient">
+  <div class="patient-inner">
+    <img src="images/famille.jpg" alt="Famille" class="patient-top-image">
+    
+    <h2 class="expertise-solutions-title">Nos solutions pour les patients</h2>
+
+    <div class="expertise-card">
+      <div class="icon"><i class="fas fa-bone"></i></div>
+      <div class="card-content">
+        <h4>Santé Osseuse</h4>
+        <p>Nos formulations soutiennent la densité et la structure osseuse, particulièrement importantes avec l'âge et pour les personnes à risque d'ostéoporose.</p>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+      <div class="icon"><i class="fas fa-walking"></i></div>
+      <div class="card-content">
+        <h4>Mobilité Articulaire</h4>
+        <p>Nos produits contribuent au maintien de la souplesse et de la mobilité des articulations, essentielles pour une vie active à tout âge.</p>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+      <div class="icon"><i class="fas fa-heartbeat"></i></div>
+      <div class="card-content">
+        <h4>Confort Quotidien</h4>
+        <p>Nos solutions aident à réduire les inconforts articulaires et musculaires, permettant de profiter pleinement des activités quotidiennes.</p>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+
+      <div class="icon"><i class="fas fa-running"></i></div>
+      <div class="card-content">
+        <h4>Récupération Active</h4>
+        <p>Nos compléments soutiennent la régénération et la protection des tissus articulaires mis à l'épreuve par l'activité physique.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- ensuite ta expertise-grid normale -->
+    
+
+  </div> <!-- fin expertise-inner -->
+  <div id="h" class="expertise-grid-inner">
+      <div class="expertise-grid">
+        <div class="expertise-card row-2">
+          <div class="icon"><i class="fas fa-medal"></i></div>
+          <h4>Qualité Certifiée</h4>
+          <p>Notre site de fabrication est certifié GMP (Good Manufacturing Practices), garantissant le respect des normes internationales les plus strictes en matière de fabrication pharmaceutique.</p>
+          
+        </div>
+        <div class="expertise-card row-2">
+          <div class="icon"><i class="fas fa-leaf"></i></div>
+          <h4>Ingrédients Sélectionnés</h4>
+          <p>Nous sélectionnons rigoureusement chaque ingrédient pour sa pureté, sa concentration et son efficacité prouvée, privilégiant les actifs naturels de haute qualité.</p>
+        </div>
+        <div class="expertise-card row-2">
+          <div class="icon"><i class="fas fa-user-md"></i></div>
+          <h4>Équipe Pluridisciplinaire</h4>
+          <p>Notre équipe combine l'expertise de pharmaciens, biochimistes, nutritionnistes et médecins pour développer des formulations complètes et scientifiquement validées.</p>
+        </div>
+      </div> <!-- fin expertise-grid -->
+    </div> <!-- fin expertise-grid-inner -->
+</section>
+
+   <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Notre Gamme de Produits</h2>
+            <div class="underline"></div>
+            <p class="products-subtitle">
+                Découvrez notre gamme complète de compléments alimentaires, spécialement formulés pour la santé articulaire et osseuse
+            </p>
+
+            <div class="products-wrapper">
+                <div class="product-card kalvit-card">
+                    <h3>KalVit</h3>
+                    <div class="tag tag-blue">Santé osseuse</div>
+                    <p>Formule complète de vitamines et minéraux essentiels conçue pour soutenir la santé de vos os et articulations au quotidien.</p>
+
+                    <div class="bottom-card">
+                        <span>30 Comprimés</span>
+                        <a href="#kalvit-details" class="link">En savoir plus <span>&#8250;</span></a>
+                    </div>
+                </div>
+
+                <div class="product-card dolopex-card">
+                    <h3>DoloPex</h3>
+                    <div class="tag tag-green">Anti-inflammatoire</div>
+                    <p>Formulation spécialement conçue pour aider à apaiser les inflammations et soulager les douleurs articulaires avec une action naturelle.</p>
+                    <div class="bottom-card">
+                        <span>30 Gélules</span>
+                        <a href="#dolopex-details" class="link">En savoir plus <span>&#8250;</span></a>
+                    </div>
+                </div>
+
+                <div class="product-card chondropex-card">
+                    <h3>ChondroPex</h3>
+                    <div class="tag tag-purple">Haute concentration</div>
+                    <p>Suspension buvable innovante à haute concentration, conçue pour un soutien articulaire optimal avec une formule complète.</p>
+                    <div class="bottom-card">
+                        <span>Suspension 500 ML</span>
+                        <a href="#chondropex-details" class="link">En savoir plus <span>&#8250;</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<section id="kalvit-details" class="container kalvit-details-section">
+  
+  <div class="product-left">
+    <h2>KalVit</h2>
+    <div class="underline"></div>
+    <h3>Soutenez vos Os et Articulations</h3>
+    <p>
+      KalVit est une formule complète de vitamines et minéraux essentiels conçue pour nourrir et renforcer la santé de vos os et de vos articulations.
+      Le calcium et la vitamine D3 sont essentiels pour maintenir des os sains et renforcer votre système immunitaire.
+    </p>
+    <div class="pill">30 Comprimés</div>
+    <div class="product-image">
+       <img src="images/ka.png" alt="Kalvit">
+    </div>
+    <div class="show-more-toggle" onclick="toggleDetails()">▼ Voir plus</div>
+  </div>
+
+  <div class="product-right hidden-mobile" id="details-section">
+    <h3>Les Ingrédients Clés de Notre Formule :</h3>
+    <ul>
+      <li><strong>Calcium (1000 mg, 400 mg élémentaire)</strong> : Renforce la structure osseuse et soutient la densité osseuse pour une meilleure solidité.</li>
+      <li><strong>Vitamine D3 (1000 UI)</strong> : Optimise l'absorption du calcium et participe à la santé des os et des articulations.</li>
+      <li><strong>Vitamine K2 (50 µg)</strong> : Favorise la fixation du calcium dans les os et aide à prévenir son accumulation dans les articulations, préservant ainsi la santé cardiovasculaire.</li>
+      <li><strong>Magnésium (200 mg)</strong> : Contribue à la fonction musculaire et soutient la santé des os.</li>
+      <li><strong>Bore (0,6 mg)</strong> : Contribue à l'intégrité des os et des articulations, tout en favorisant l'assimilation du calcium et du magnésium.</li>
+    </ul>
+
+    <h3>Conseils d'Utilisation :</h3>
+    <p>
+      Prenez 1 à 2 comprimés par jour, de préférence pendant un repas pour une absorption optimale. Cette posologie est facile à intégrer dans votre routine quotidienne.
+    </p>
+
+    <h3>Applications :</h3>
+    <div class="applications">
+      <span class="application-tag">Renforcer les os</span>
+      <span class="application-tag">Soutenir la santé articulaire</span>
+      <span class="application-tag">Faciliter l'absorption du calcium</span>
+      <span class="application-tag">Prévention de l'ostéoporose</span>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="dolopex-details" class="container dolopex-details-section">
+  <div class="product-left dolopex-left">
+    <h2>DoloPex</h2>
+    <div class="underline-white"></div>
+    <h3>Aide à Apaiser et Soulager vos Articulations</h3>
+    <p>
+      DoloPex est un complément alimentaire à base de plantes, conçu pour renforcer la souplesse et améliorer le confort articulaire, musculaire et tendineux. Grâce à la synergie des actifs naturels, il permet d’apaiser les douleurs articulaires, musculaires et tendineuses, ainsi que les douleurs associées à l’arthrose.
+    </p>
+    <div class="pill">30 Gélules</div>
+    <div class="product-image">
+      <img src="images/do.png" alt="DoloPex">
+    </div>
+
+    <!-- Flèche -->
+    <div class="show-more-toggle" onclick="toggleDolopex()">▼ Voir plus</div>
+  </div>
+
+  <div class="product-right dolopex-right hidden-mobile" id="dolopex-more">
+    <h3>Les Ingrédients Clés de Notre Formule :</h3>
+    <ul>
+      <li><strong>Harpagophytum (300 mg)</strong> : Réduits les inconforts articulaires avec une action naturelle et efficace.</li>
+      <li><strong>Curcuma (100 mg)</strong> : Soutient la santé articulaire avec une action ciblée.</li>
+      <li><strong>Poivre noir (20 mg)</strong> : Renforce l’efficacité du curcuma.</li>
+      <li><strong>Boswellia (100 mg)</strong> : Réduction de l’inconfort et amélioration de la mobilité articulaire.</li>
+      <li><strong>Zinc (5 mg)</strong> : Complète l’action anti-inflammatoire des actifs.</li>
+    </ul>
+
+    <h3>Conseils d'Utilisation :</h3>
+    <p>Prenez 1 gélule matin et soir avec un grand verre d’eau. Programme recommandé de 30 jours.</p>
+
+    <h3>Applications :</h3>
+    <div class="applications">
+      <span class="application-tag">Douleurs articulaires</span>
+      <span class="application-tag">Inflammation chronique</span>
+      <span class="application-tag">Souplesse et confort</span>
+      <span class="application-tag">Arthrose</span>
+    </div>
+  </div>
+</section>
+
+<section id="chondropex-details" class="container chondropex-details-section">
+  <div class="product-left">
+    <h2>ChondroPex</h2>
+    <div class="underline"></div>
+    <h3>La Solution Nutritionnelle Haute Concentration</h3>
+    <p>
+      ChondroPex est une suspension buvable innovante à haute concentration à l'arôme de mangue-fraise, conçue pour un soutien articulaire optimal.
+      Grâce à une formulation scientifique rigoureuse, ChondroPex aide à maintenir la santé et la souplesse des articulations avec une efficacité maximale.
+    </p>
+    <div class="pill">Suspension buvable 500 ML - Sans sucre</div>      
+    <div class="product-image">
+      <img src="images/chno.png" alt="DoloPex">
+    </div>
+     <div class="show-more-toggle" onclick="toggleChondroDetails()">▼ Voir plus</div>
+  </div>
+  </div>
+
+  <div class="product-right hidden-mobile" id="chondroDetails">
+    <h3>Les Ingrédients Clés de Notre Formule Haute Concentration :</h3>
+    <ul>
+      <li><strong>Glucosamine sulfate (1200 mg)</strong> : Essentiel pour la réparation et la régénération du cartilage, aide à maintenir la flexibilité et la santé des articulations.</li>
+      <li><strong>Chondroïtine sulfate (800 mg)</strong> : Soutient la structure du cartilage et favorise son élasticité, contribuant à la souplesse des articulations.</li>
+      <li><strong>MSM (100 mg)</strong> : Aide à améliorer la mobilité en favorisant la production de collagène et le maintien de la structure cartilagineuse.</li>
+      <li><strong>Acide hyaluronique (25 mg)</strong> : Lubrifie les articulations, réduisant les frottements et soutenant la souplesse et la fluidité du mouvement.</li>
+      <li><strong>Collagène (25 mg)</strong> : Soutient la réparation et l'entretien des tissus articulaires, renforçant leur structure.</li>
+      <li><strong>Vitamine C (50 mg)</strong> : Essentielle à la production de collagène et à la santé du cartilage, soutient les mécanismes naturels de réparation.</li>
+    </ul>
+
+    <h3>Conseils d'Utilisation :</h3>
+    <p>
+      Agiter avant emploi. Prendre 25 ml par jour. Remplissez le gobelet doseur jusqu'au trait de 25 ml. Vous pouvez boire la suspension directement ou la diluer avec un peu d'eau pour un goût encore plus agréable.
+    </p>
+
+    <h3>Bénéfices :</h3>
+    <div class="applications">
+      <span class="application-tag">Aide à soulager les douleurs articulaires</span>
+      <span class="application-tag">Améliore la mobilité</span>
+      <span class="application-tag">Favorise la régénération du cartilage</span>
+      <span class="application-tag">Formule haute concentration</span>
+      <span class="application-tag">Sans sucre</span>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose-section ">
+  <h2>Pourquoi Choisir Nos Produits ?</h2>
+  <div class="why-cards">
+
+    <div class="why-card">
+      <div class="why-icon"><i class="fas fa-capsules"></i></div>
+      <h3>Formules Complètes</h3>
+      <p>Une synergie unique de vitamines, minéraux et ingrédients naturels pour une efficacité optimale, développée par nos experts scientifiques.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon"><i class="fas fa-award"></i></div>
+      <h3>Qualité Certifiée</h3>
+      <p>Site de fabrication certifié GMP, garantissant la qualité et la sécurité de nos produits, avec un contrôle rigoureux à chaque étape de production.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon"><i class="fas fa-seedling"></i></div>
+      <h3>Ingrédients Naturels</h3>
+      <p>Des solutions naturelles basées sur des données scientifiques pour des résultats efficaces, avec des actifs sélectionnés pour leur pureté et leur qualité.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="a">
+<section id="contact" class="contact-section">
+  <h2>Contactez-Nous</h2><br>
+  <div class="underline"></div>
+  <p class="contact-subtitle">
+    Pour en savoir plus sur nos produits ou pour toute question, n'hésitez pas à nous contacter.
+  </p>
+
+  <div class="contact-wrapper">
+   <div class="contact-info">
+  <h3>Informations de Contact</h3>
+
+  <div class="info-block">
+    <i class="fas fa-map-marker-alt contact-icon"></i>
+    <div>
+      <strong>Adresse :</strong><br>
+      Nour City - Centre urbain Nord - Tunis
+    </div>
+  </div>
+
+  <div class="info-block">
+    <i class="fas fa-phone contact-icon"></i>
+    <div>
+      <strong>Téléphone :</strong><br>
+      (+216) 71 82 24 85<br>(+216) 48 07 44 41
+    </div>
+  </div>
+
+  <div class="info-block">
+    <i class="fas fa-envelope contact-icon"></i>
+    <div>
+      <strong>Email :</strong><br>
+      contact@apex-laboratoire.com
+    </div>
+  </div>
+
+  <div class="info-block">
+    <i class="fas fa-globe contact-icon"></i>
+    <div>
+      <strong>Site Web :</strong><br>
+      www.apex-laboratoire.com
+    </div>
+  </div>
+
+  <h4>Site de Fabrication</h4>
+
+  <div class="info-block">
+    <i class="fas fa-industry contact-icon"></i>
+    <div>
+      1.8 KM Rue Korba bni Khaled - Nabeul Tunisie
+    </div>
+  </div>
+
+  <div class="info-block">
+    <i class="fas fa-check-circle contact-icon"></i>
+    <div>
+      Site de fabrication certifié GMP
+    </div>
+  </div>
+</div>
+
+    <div class="contact-form">
+      <h3>Formulaire de Contact</h3><br>
+      <form action="http://localhost:5501/send_email" method="POST">
+
+        <label>Nom complet</label>
+        <input type="text" name="name" required placeholder="Votre nom ">
+      
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="Votre email">
+      
+        <label>Téléphone</label>
+        <input type="text" name="phone" placeholder="Votre téléphone">
+      
+        <label>Message</label>
+        <textarea name="message" rows="5" required placeholder="Votre message"></textarea>
+      
+        <button type="submit">Envoyer</button>
+      </form>
+      
+    </section></div>
+  
+    
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col logo-col">
+        <img src="images/apexlogo.jpg" alt="Logo Apex" />
+        <p>Solutions naturelles et scientifiques pour votre santé articulaire et osseuse</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nos Produits</h4>
+        <ul>
+          <li><a href="#kalvit-details">KalVit</a></li>
+          <li><a href="#dolopex-details">DoloPex</a></li>
+          <li><a href="#chondropex-details">ChondroPex</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liens Utiles</h4>
+        <ul>
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#about">À Propos</a></li>
+          <li><a href="#expertise">Notre Expertise</a></li>
+          <li><a href="#rd">R&D</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <hr class="footer-divider" />
+  
+    <div class="footer-bottom">
+      <p>&copy; 2023 APEX Laboratoire. Tous droits réservés.</p>
+      <p>Note : Les compléments alimentaires ne peuvent pas se substituer à une alimentation équilibrée et variée. En cas de besoin, consulter votre médecin ou pharmacien.</p>
+    </div>
+  </footer>
+  
+ <script>
+  function toggleMenu() {
+    const menu = document.querySelector('.nav-links');
+    menu.classList.toggle('show');
+  }
+</script>
+
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
