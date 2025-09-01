@@ -22,10 +22,15 @@ app.post('/send_email', (req, res) => {
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
+    // auth: {
+    //   user: 'kaoutarbrahimi28@gmail.com',
+    //   pass: 'ptwm zjnl dbiz lnpk' 
+    // }
     auth: {
-      user: 'kaoutarbrahimi28@gmail.com',
-      pass: 'ptwm zjnl dbiz lnpk' 
-    }
+  user: process.env.EMAIL_USER,
+  pass: process.env.EMAIL_PASS
+}
+
   });
 
   const mailOptions = {
