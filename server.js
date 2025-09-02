@@ -6,8 +6,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const port = 5502;
 
+// ➕ Utilise le PORT fourni par Railway
+const PORT = process.env.PORT || 5502;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,29 +20,17 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Route pour traiter le formulairettsllcxpscbjpbks
+// Route pour traiter le formulaire
 app.post('/send_email', (req, res) => {
   const { name, email, phone, message } = req.body;
 
-//   const transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     // auth: {
-//     //   user: 'kaoutarbrahimi28@gmail.com',
-//     //   pass: 'ptwm zjnl dbiz lnpk' 
-//     // }
-//     auth: {
-//   user: process.env.EMAIL_USER,
-//   pass: process.env.EMAIL_PASS
-// }
-
-//   });
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
 
   const mailOptions = {
     from: email,
@@ -61,9 +50,9 @@ const transporter = nodemailer.createTransport({
   });
 });
 
-app.listen(port, () => {
-  console.log(`Serveur lancé sur http://localhost:${port}`);
+// ✅ Change ici : Railway a besoin de 0.0.0.0
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`✅ Serveur lancé sur http://localhost:${PORT}`);
 });
-
 
 console.log("JS chargé !");
