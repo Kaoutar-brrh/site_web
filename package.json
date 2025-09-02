@@ -4,7 +4,7 @@
   "description": "Mon site avec formulaire",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node start.js"
   },
   "engines": {
     "node": "18.x"
