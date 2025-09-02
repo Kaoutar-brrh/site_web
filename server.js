@@ -1,10 +1,13 @@
+require('dotenv').config();
+
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const port = 5501;
+const port = 5502;
+
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,18 +23,25 @@ app.get('/', (req, res) => {
 app.post('/send_email', (req, res) => {
   const { name, email, phone, message } = req.body;
 
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    // auth: {
-    //   user: 'kaoutarbrahimi28@gmail.com',
-    //   pass: 'ptwm zjnl dbiz lnpk' 
-    // }
-    auth: {
-  user: process.env.EMAIL_USER,
-  pass: process.env.EMAIL_PASS
-}
+//   const transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     // auth: {
+//     //   user: 'kaoutarbrahimi28@gmail.com',
+//     //   pass: 'ptwm zjnl dbiz lnpk' 
+//     // }
+//     auth: {
+//   user: process.env.EMAIL_USER,
+//   pass: process.env.EMAIL_PASS
+// }
 
-  });
+//   });
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
+});
 
   const mailOptions = {
     from: email,
