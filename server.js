@@ -6,21 +6,21 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-
-// ➕ Utilise le PORT fourni par Railway
-const PORT = process.env.PORT || 5502;
+const port = process.env.PORT || 5502; // Important pour Railway
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname)));
 
-// Route HTML
+// Servir les fichiers statiques (HTML, CSS, JS, images)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Route pour servir l'index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Route pour traiter le formulaire
+// Traitement du formulaire
 app.post('/send_email', (req, res) => {
   const { name, email, phone, message } = req.body;
 
@@ -50,9 +50,7 @@ app.post('/send_email', (req, res) => {
   });
 });
 
-// ✅ Change ici : Railway a besoin de 0.0.0.0
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`✅ Serveur lancé sur http://localhost:${PORT}`);
+// Lancement du serveur
+app.listen(port, () => {
+  console.log(`Serveur lancé sur http://localhost:${port}`);
 });
-
-console.log("JS chargé !");
