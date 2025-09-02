@@ -6,21 +6,19 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 5502; // Important pour Railway
+const port = process.env.PORT || 5502;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-// Servir les fichiers statiques (HTML, CSS, JS, images)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Route pour servir l'index.html
+// Route principale
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Traitement du formulaire
+// Route POST pour le formulaire
 app.post('/send_email', (req, res) => {
   const { name, email, phone, message } = req.body;
 
@@ -34,14 +32,14 @@ app.post('/send_email', (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: 'kaoutarbrahimi28@gmail.com',
+    to: process.env.EMAIL_USER,
     subject: `Message de ${name}`,
     text: `Téléphone : ${phone}\n\nMessage : ${message}`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error(error);
+      console.error('Erreur lors de l’envoi :', error);
       res.status(500).send('Erreur lors de l’envoi');
     } else {
       console.log('Email envoyé : ' + info.response);
@@ -50,7 +48,6 @@ app.post('/send_email', (req, res) => {
   });
 });
 
-// Lancement du serveur
 app.listen(port, () => {
   console.log(`Serveur lancé sur http://localhost:${port}`);
 });
